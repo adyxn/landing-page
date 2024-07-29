@@ -1,12 +1,8 @@
 <!DOCTYPE HTML>
-<!--
-	Fractal by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <!DOCTYPE HTML>
 <html>
-	<head>
+    <head>
         <title>Adyan Zaman - Portfolio</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -73,7 +69,7 @@
             }
             /* Header background image */
             #header {
-                background-image: url('images/merced.jpg'); /* Replace with your image path */
+                background-image: url('images/UC_Merced_at_night.webp'); /* Replace with your image path */
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -86,6 +82,15 @@
                 position: relative;
                 z-index: 2;
             }
+            #header h1 {
+                font-size: 2.5em; /* Larger font size for name */
+            }
+            #header p {
+                font-size: 0.8em; /* Smaller font size for description text */
+            }
+            #header .actions a {
+                font-size: 1.2em; /* Larger font size for buttons */
+            }
             #header:before {
                 content: '';
                 position: absolute;
@@ -95,6 +100,20 @@
                 bottom: 0;
                 background: rgba(0, 0, 0, 0.5); /* Dark overlay to enhance text readability */
                 z-index: 1;
+            }
+            .description-container {
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+                background: rgba(100, 0, 0, 0); /* Optional: Background for better readability */
+                padding: 10px;
+                border-radius: 5px;
+            }
+            .description-container p {
+                margin: 5px 0;
+                font-size: 0.8em; /* Adjust as needed */
             }
         </style>
     </head>
@@ -116,7 +135,14 @@
                 </div>
             </div>
             <div class="image phone"><div class="inner"><img src="images/linkedinpfp.jpg" alt="Adyan Zaman" /></div></div>
+            <div class="description-container">
+                <p>Hello, World! 🚀 I'm currently embracing the world of Computer Science and Engineering at UC Merced. As a first-year student deeply involved in computer technology, I'm not just coding, I'm creating digital adventures that captivate and inspire.</p>
+                <p>I've honed my interest in transforming ideas into reality through projects I can create and practice. My leadership style comes with enthusiasm, strategy, and geeky humor. I find joy in connecting with people from diverse backgrounds and cultures, as it decreases my bias and increases my love for their food. 😋</p>
+                <p>I'm looking for an internship to grow my experience that's as passionate about community and impactful technology as I am.</p>
+                <p>Let’s connect! 🤖🌐</p>
+            </div>
         </header>
+
 
         <!-- One -->
         <section id="one" class="wrapper style2 special">
@@ -154,11 +180,11 @@
                         </div>
                         <div class="swiper-slide">
                             <img src="images/bsdhp.jpg" alt="BSD HP" />
-                            <div class="caption">BSD HP project</div>
+                            <div class="caption">Black Students Day @ HP </div>
                         </div>
                         <div class="swiper-slide">
                             <img src="images/medavis.jpg" alt="Medavis" />
-                            <div class="caption">Medavis project</div>
+                            <div class="caption">UC Davis Visit</div>
                         </div>
                         <div class="swiper-slide">
                             <img src="images/merced.jpg" alt="Merced" />
