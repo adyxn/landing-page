@@ -1,4 +1,6 @@
 <!DOCTYPE HTML>
+
+<!DOCTYPE HTML>
 <html>
     <head>
         <title>Adyan Zaman - Portfolio</title>
@@ -14,35 +16,80 @@
                 margin-top: 10px;
             }
             /* Set dimensions for the Swiper container */
-            .swiper-container {
-                width: 100%;
-                max-width: 600px; /* Adjust as needed */
-                height: 400px; /* Adjust as needed */
-                margin: auto;
-            }
-            .swiper-slide {
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
-            .swiper-slide img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover; /* Ensure the image covers the container without stretching */
-            }
-            .swiper-slide .caption {
-                position: absolute;
-                bottom: 10px;
-                background: rgba(0, 0, 0, 0.5);
-                color: #fff;
-                padding: 10px;
-                text-align: center;
-                width: 90%;
-                margin: 0 auto;
-                border-radius: 5px;
-            }
+.swiper-container {
+    width: 100%;
+    max-width: 800px; /* Increased width for a better desktop experience */
+    height: 450px; /* Adjusted height */
+    margin: 0 auto; /* Centered swiper */
+    position: relative;
+}
+
+/* Swiper slides styling */
+.swiper-slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure the images cover the container */
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevents image distortion */
+}
+
+/* Caption styling for swiper slides */
+.swiper-slide .caption {
+    position: absolute;
+    bottom: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+/* Styling for Swiper buttons */
+.swiper-button-next, .swiper-button-prev {
+    color: #fff; /* Set the arrow color */
+    background: rgba(0, 0, 0, 0.5); /* Add background for visibility */
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+/* Positioning for navigation buttons */
+.swiper-button-prev {
+    left: -10px; /* Moved it closer to the carousel */
+}
+.swiper-button-next {
+    right: -10px; /* Moved it closer to the carousel */
+}
+
+/* For responsiveness */
+@media (max-width: 768px) {
+    .swiper-container {
+        max-width: 100%;
+        height: 300px; /* Adjusted height for smaller devices */
+    }
+
+    .swiper-button-prev {
+        left: -5px; /* Adjusted positioning for mobile */
+    }
+
+    .swiper-button-next {
+        right: -5px; /* Adjusted positioning for mobile */
+    }
+
+}
             .card-container {
                 display: flex;
                 flex-wrap: wrap;
@@ -66,61 +113,39 @@
                 text-align: center;
             }
             /* Header background image */
-            /* Overall header styling */
-#header {
-  position: relative;
-  background: var(--dark-bg); /* Ensure the background is darker for contrast */
-  padding: 60px 20px; /* Adjust spacing */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  z-index: 1;
-}
-
-/* Overlay for better contrast between text and background */
-#header:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-  z-index: 0;
-}
-
-#header .content {
-  position: relative; /* Ensure the content is above the overlay */
-  z-index: 1;
-  color: white; /* Ensure text is white for visibility */
-}
-
-.image.phone .inner img {
-  width: 200px;
-  height: auto;
-  border-radius: 50%; /* Make it circular */
-  filter: brightness(1.2) contrast(1.3) saturate(1.2); /* Increase brightness, contrast, and saturation */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow to make the image pop */
-}
-
-/* Email link styling */
-.email {
-  margin-top: 20px;
-  font-size: 1.2em;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  #header {
-    padding: 40px 10px;
-  }
-
-  .image.phone .inner img {
-    width: 150px; /* Adjust image size for smaller screens */
-  }
-}
-
+            #header {
+                background-image: url('images/UC_Merced_at_night.webp'); /* Replace with your image path */
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                color: #fff; /* Ensure text is readable over the image */
+                padding: 60px 0;
+                text-align: center;
+                position: relative;
+            }
+            #header .content {
+                position: relative;
+                z-index: 2;
+            }
+            #header h1 {
+                font-size: 2.5em; /* Larger font size for name */
+            }
+            #header p {
+                font-size: 0.8em; /* Smaller font size for description text */
+            }
+            #header .actions a {
+                font-size: 1.2em; /* Larger font size for buttons */
+            }
+            #header:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0); /* Dark overlay to enhance text readability */
+                z-index: 1;
+            }
             .description-container {
                 position: absolute;
                 bottom: 20px;
@@ -133,46 +158,160 @@
             }
             .description-container p {
                 margin: 5px 0;
-                font-size: 0.8em; /* Adjust as needed */
+                font-size: 0.9em; /* Adjust as needed */
             }
+			  /* Section one styling */
+			  #one {
+        background-color: #f9f9f9; /* Light background for contrast */
+        padding: 60px 0;
+        text-align: center;
+    }
+
+    #one .major {
+        margin-bottom: 30px;
+    }
+
+    /* Styling for icons */
+    .icons.major li {
+        display: inline-block;
+        margin: 0 15px;
+    }
+
+    /* Adjust icon size and color */
+    .icons.major li .icon {
+        font-size: 4em; /* Make icons larger */
+        color: #3498db; /* A vibrant blue color for icons */
+        transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition on hover */
+    }
+
+    /* Hover effect to make the icons interactive */
+    .icons.major li .icon:hover {
+        color: #2ecc71; /* Change color on hover */
+        transform: scale(1.2); /* Slight scaling effect */
+    }
+
+    /* Icon labels */
+    .icons.major li .label {
+        display: block;
+        font-size: 0.5em; /* Increase label font size */
+        margin-top: 10px;
+        color: #333; /* Darker text for readability */
+    }
         </style>
     </head>
     <body class="is-preload">
 
         <!-- Header -->
-		<header id="header">
-			<div class="content">
-			  <h1><a href="#">Adyan Zaman</a></h1>
-			  <p>Computer Science and Engineering Student<br />Aspiring Software Engineer at UC Merced</p>
-			  <ul class="actions">
-				<li><a href="images/resumeZaman(sophmore2024) fall.docx.pdf" class="button primary icon solid">Resume</a></li>
-				<li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
-			  </ul>
-			  <div class="email">
-				<a href="mailto:adyanzedu@gmail.com">adyanedu@gmail.com</a>
-			  </div>
-			</div>
-			
-			<!-- Image with higher contrast -->
-			<div class="image phone">
-			  <div class="inner">
-				<img src="images/adyanprof1.png" alt="Adyan Zaman" />
-			  </div>
-			</div>
-		  </header>
-		  
-        <!-- One -->
-        <section id="one" class="wrapper style2 special">
-            <header class="major">
-                <h2>Welcome to my portfolio<br />
-                Discover my projects and interests</h2>
-            </header>
-            <ul class="icons major">
-                <li><span class="icon solid fa-code"><span class="label">Coding</span></span></li>
-                <li><span class="icon solid fa-book"><span class="label">Research</span></span></li>
-                <li><span class="icon solid fa-pen"><span class="label">Writing</span></span></li>
-            </ul>
-        </section>
+        <header id="header">
+            <div class="content">
+                <h1><a href="#">Adyan Zaman</a></h1>
+                <p>Computer Science and Engineering Student<br />
+                <br />
+                Aspiring Software Engineer at UC Merced</p>
+                <ul class="actions">
+                    <li><a href="images/resumeZaman(sophmore2024) fall.docx.pdf" class="button primary icon solid">Resume</a></li>
+                    <li><a href="#one" class="button icon solid fa-chevron-down scrolly">Learn More</a></li>
+                </ul>
+                <div class="email">
+                    <a href="mailto:adyanzedu@gmail.com">adyanedu@gmail.com</a>
+                </div>
+            </div>
+            <div class="image phone"><div class="inner"><img src="images/adyanprof1.png" alt="Adyan Zaman" /></div></div>
+            <div class="description-container">
+        </header>
+
+
+      <!-- HTML for Welcome Section -->
+<section id="one" class="wrapper style2 special">
+    <header class="major">
+        <h2 class="welcome-heading">Welcome to my portfolio</h2>
+        <p class="welcome-subheading">Discover my projects and interests</p>
+        <p class="description">
+            Hi, I’m <span class="highlight">Adyan Zaman</span>, a passionate <strong>Computer Science and Engineering student</strong> at UC Merced. 
+            My journey is driven by a love for <span class="highlight">coding</span>, problem-solving, and exploring the world of technology. 
+            From building software solutions to leading innovative projects, I strive to push boundaries and create meaningful impact. 
+            Outside of academics, I’m also an enthusiast of <span class="highlight">basketball</span>, <span class="highlight">running</span>, fitness, and good food – especially <strong>lobster</strong>!
+        </p>
+    </header>
+    <ul class="icons major">
+        <li><span class="icon solid fa-code"><span class="label">Coding</span></span></li>
+        <li><span class="icon solid fa-book"><span class="label">Research</span></span></li>
+        <li><span class="icon solid fa-pen"><span class="label">Writing</span></span></li>
+    </ul>
+</section>
+
+<!-- CSS Styling -->
+<style>
+    /* General Section Styling */
+    #one {
+        background-color: #fefefe;
+        padding: 60px 20px;
+        text-align: center;
+        color: #000000;
+    }
+
+    /* Softer Styling for Welcome Text */
+    .welcome-heading {
+        font-size: 2.5rem; /* Slightly smaller font */
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 1.5px; /* Slightly less spacing */
+        color: #97aeb8; /* Softer light blue color */
+        text-transform: none; /* Remove aggressive uppercase */
+        margin-bottom: 10px;
+    }
+
+    .welcome-subheading {
+        font-size: 1.3rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        margin-bottom: 30px;
+    }
+
+    .description {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        font-family: 'Open Sans', sans-serif;
+        margin-bottom: 30px;
+        padding: 0 20px;
+    }
+
+    /* Highlight important words */
+    .highlight {
+        color: #ff6f91; /* Softer pink for highlights */
+        font-weight: bold;
+    }
+
+    /* Icon styling */
+    .icons.major li {
+        display: inline-block;
+        margin: 0 20px;
+    }
+
+    .icons.major .fa-code, .icons.major .fa-book, .icons.major .fa-pen {
+        font-size: 3rem;
+        color: #aad3e6;
+        transition: transform 0.3s ease;
+    }
+
+    .icons.major li:hover .fa-code, .icons.major li:hover .fa-book, .icons.major li:hover .fa-pen {
+        transform: scale(1.2);
+        color: #ff6f91;
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+        .welcome-heading {
+            font-size: 2.2rem;
+        }
+        .welcome-subheading {
+            font-size: 1.1rem;
+        }
+        .description {
+            font-size: 1.1rem;
+        }
+    }
+</style>
+
 
         <!-- Image Slideshow -->
         <section id="slideshow" class="wrapper">
@@ -191,9 +330,13 @@
                             <img src="images/rfdstudy.jpg" alt="Reconnaissance Fire Drone" />
                             <div class="caption">The Reconnaissance Fire Drone under development</div>
                         </div>
+						<div class="swiper-slide">
+                            <img src="images/rfdstudy.jpg" alt="ff" />
+                            <div class="caption">The Reconnaissance Fire Drone under development</div>
+                        </div>
                         <div class="swiper-slide">
                             <img src="images/coolflick.JPG" alt="Cool Flick" />
-                            <div class="caption">ASUCM Job </div>
+                            <div class="caption">Cool flick shot</div>
                         </div>
                         <div class="swiper-slide">
                             <img src="images/bsdhp.jpg" alt="BSD HP" />
@@ -209,7 +352,7 @@
                         </div>
                         <div class="swiper-slide">
                             <img src="images/suitzaman.jpg" alt="Suit Zaman" />
-                            <div class="caption">Suit</div>
+                            <div class="caption">Adyan in a suit</div>
                         </div>
                         <div class="swiper-slide">
                             <img src="images/standford.jpg" alt="Stanford" />
@@ -217,7 +360,7 @@
                         </div>
                         <div class="swiper-slide">
                             <img src="images/thetriograd.jpg" alt="The Trio Grad" />
-                            <div class="caption"> High School Graduation day </div>
+                            <div class="caption">Graduation day</div>
                         </div>
                     </div>
                     <!-- Add Pagination -->
