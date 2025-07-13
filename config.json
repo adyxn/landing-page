@@ -1,0 +1,31 @@
+{
+  "personal": {
+    "name": "Adyan Zaman",
+    "title": "Computer Science and Engineering Student",
+    "bio": "Hi, I’m Adyan Zaman, a passionate Computer Science and Engineering student at UC Merced. My journey is driven by a love for coding, problem-solving, and exploring the world of technology. From building software solutions to leading innovative projects, I strive to push boundaries and create meaningful impact. Outside of academics, I’m also an enthusiast of basketball, running, fitness, and good food – especially lobster!",
+    "email": "adyanzedu@gmail.com",
+    "social": {
+      "github": "https://github.com/adyxn",
+      "linkedin": "https://www.linkedin.com/in/adyanzaman444",
+      "facebook": "https://www.facebook.com/adyan.zaman/",
+      "instagram": "https://www.instagram.com/gubbiez/"
+    }
+  },
+  "projects": [
+    {
+      "title": "Software Development Lead - Farm-ng",
+      "description": "Developed a specialized attachment for the Farm Robotics Challenge to minimize crop yield loss due to growth irregularities. Engineered a Rest API for managing data and instructions, optimizing a seed-drilling machine for enhanced planting.",
+      "image": "images/farmbot2.jpg"
+    },
+    {
+      "title": "Software Developer - Team Cartographer (NASA S.U.I.T.S)",
+      "description": "Development in LMCC (Local Mission Control Console) Team as part of the 2024 NASA S.U.I.T.S Challenge. Learning and Implementing A* Search Algorithm using Python and Unity, gaining skills with the utilization of git.",
+      "image": "images/nasasuits.jpg"
+    },
+    {
+      "title": "RFD - Reconnaissance Fire Drone - Team Lead",
+      "description": "Led and constructed a drone with the purpose of facilitating a search and rescue with a team of student engineers for experience. Employed Arduino, C++, and Fusion 360 for drone testing and development, advancing firefighting technology knowledge.",
+      "image": "images/rfdstudy.jpg"
+    }
+  ]
+}
