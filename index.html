@@ -361,7 +361,7 @@
                 <p>Computer Science and Engineering Student<br />Aspiring Software Engineer at UC Merced</p>
                 <nav aria-label="Main actions">
                     <ul class="actions" style="list-style:none; padding:0; margin:0; display:flex; justify-content:center; gap:8px;">
-                        <li><a href="images/resumeZaman(sophmore2024) fall.docx.pdf" class="button primary icon solid fa-file-alt" aria-label="Download Resume">Resume</a></li>
+                        <li><a href="assets/adyan_resume.pdf" class="button primary icon solid fa-file-alt" aria-label="Download Resume" target="_blank" rel="noopener">Resume</a></li>
                         <li><a href="#one" class="button icon solid fa-chevron-down scrolly" aria-label="Learn More">Learn More</a></li>
                     </ul>
                 </nav>
@@ -399,16 +399,12 @@
         <!-- Dynamic Widget Section -->
         <section id="dynamic-widget" class="wrapper style2 special" style="margin-top:0;">
             <header class="major">
-                <h2 class="welcome-heading">Now Playing / Activity</h2>
+                <h2 class="welcome-heading">Now Playing on Spotify</h2>
             </header>
-            <div id="nowPlaying" style="display:flex; justify-content:center; align-items:center; min-height:60px;">
-                <!-- Spotify or GitHub widget will be injected here -->
-                <iframe id="spotifyWidget" style="border-radius:12px; border:none; min-width:250px; min-height:80px; display:none;" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-                <div id="githubHeatmap" style="display:none;"></div>
+            <div id="nowPlaying" style="display:flex; justify-content:center; align-items:center; min-height:100px;">
+                <img id="spotify-now-playing" src="https://spotify-now-playing-kittinan.vercel.app/api/now-playing?user=Adyan%20Zaman&theme=dark" alt="Spotify Now Playing" style="max-width:420px;width:100%;border-radius:14px;box-shadow:0 2px 12px rgba(0,0,0,0.10);background:var(--card-bg);" />
             </div>
-            <div style="text-align:center; margin-top:12px;">
-                <button id="toggleWidget" class="button" style="font-size:0.95rem;">Show GitHub Activity</button>
-            </div>
+            <div id="spotify-fallback" style="display:none;text-align:center;color:var(--primary);margin-top:10px;font-size:1.1rem;">Not playing</div>
         </section>
         <style>
             .fun-facts-container {
@@ -1048,6 +1044,13 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
         <!-- Swiper JS -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+        <!-- Swiper JS -->
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         <script>
             // Swiper
@@ -1146,6 +1149,59 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                 grad.innerHTML = '<stop offset="0%" stop-color="#fff"/><stop offset="100%" stop-color="var(--accent)" stop-opacity="0.7"/>';
                 defs.appendChild(grad);
                 svg.insertBefore(defs, svg.firstChild);
+            }
+            const starsSVG = document.getElementById('starsSVG');
+            if (starsSVG) {
+                createStars(starsSVG, 32);
+                window.addEventListener('resize', () => createStars(starsSVG, 32));
+            }
+
+            // Animated name (draw line under)
+            const animatedName = document.getElementById('animatedName');
+            if (animatedName) {
+                animatedName.style.position = 'relative';
+                let underline = document.createElement('span');
+                underline.style.display = 'block';
+                underline.style.height = '3px';
+                underline.style.width = '0';
+                underline.style.background = 'linear-gradient(90deg, var(--accent), #fff 60%, var(--accent))';
+                underline.style.margin = '0 auto';
+                underline.style.borderRadius = '2px';
+                underline.style.transition = 'width 1.2s cubic-bezier(.4,2,.6,1)';
+                animatedName.appendChild(underline);
+                setTimeout(() => { underline.style.width = '90%'; }, 900);
+            }
+
+            // Section transitions
+            function revealSections() {
+                document.querySelectorAll('section.wrapper, section.wrapper.style2').forEach((sec, i) => {
+                    setTimeout(() => sec.classList.add('visible'), 200 + i*180);
+                });
+            }
+            window.addEventListener('DOMContentLoaded', revealSections);
+
+            // Spotify Now Playing fallback (optional, for demo)
+            function checkSpotifyNowPlaying() {
+                const img = document.getElementById('spotify-now-playing');
+                const fallback = document.getElementById('spotify-fallback');
+                if (!img) return;
+                img.onerror = function() {
+                    img.style.display = 'none';
+                    if (fallback) fallback.style.display = '';
+                };
+                img.onload = function() {
+                    if (img.naturalWidth < 10) {
+                        img.style.display = 'none';
+                        if (fallback) fallback.style.display = '';
+                    } else {
+                        img.style.display = '';
+                        if (fallback) fallback.style.display = 'none';
+                    }
+                };
+            }
+            checkSpotifyNowPlaying();
+            setInterval(checkSpotifyNowPlaying, 20000); // auto-update every 20s
+        </script>
             }
             const starsSVG = document.getElementById('starsSVG');
             if (starsSVG) {
